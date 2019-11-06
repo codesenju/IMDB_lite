@@ -35,7 +35,16 @@ When you have completed this code pattern, you will understand how to:
 - [Create your LinuxONE guest](https://github.com/codesenju/hyperledger-fabric-on-linux-one/blob/master/README.md#create-your-linuxone-guest) Remember to select RHEL instaead of SUSE.
 
 ### Install Docker
-First, you need to download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html).  For version 1.11.2 on RHEL 7.3:
+First we need to change our user to root before installing docker to avoid any permission denied errors. Always make sure you're on root for the rest of the code pattern when executing commands.
+```shell
+# sudo su
+```
+
+Install "GNU Wget". Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols.
+```shell
+# yum -y install wget
+```
+Download the correct Docker package archive from [this page](https://www.ibm.com/developerworks/linux/linux390/docker.html) using Wget.
 ```shell
 # wget ftp://ftp.unicamp.br/pub/linuxpatch/s390x/redhat/rhel7.3/docker-17.05.0-ce-rhel7.3-20170523.tar.gz
 ```
